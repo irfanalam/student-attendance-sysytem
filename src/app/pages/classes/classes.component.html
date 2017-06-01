@@ -1,0 +1,32 @@
+<md-card class="mainCard">
+  <md-toolbar>
+    <div class="flex flex-row flex-space-between">
+      <span>Classes</span>
+      <a routerLink="/dashboard/classes/add" ><button md-mini-fab ><md-icon>add</md-icon></button></a>
+    </div> 
+  </md-toolbar>
+
+  <div class="row">
+   <div class="col"></div>
+   <div class="col-md-8 classList">
+      <div *ngIf="classes.length > 0">
+        <div *ngFor="let class of classes; let i=index">
+          <!--<p>Yo {{ class.class_no }}</p>
+          <p>Bitch    {{ class.class_assign }}</p>-->
+          <article class="flex flex-row flex-space-between flex-center-items padding">
+            <div>
+              <h5><strong>{{class.class_assign}}</strong></h5>
+              <p>Location : {{class.class_no}}</p>
+            </div>
+            <div class="flex-center-items">
+              <button md-icon-button ><md-icon>edit</md-icon></button>
+              <button md-icon-button (click)="onHandleClassDel(class.id)"><md-icon>delete</md-icon></button>
+            </div>
+          </article>
+        </div>
+      </div>
+   </div>
+   <div class="col padding"></div>
+  </div>
+</md-card>
+

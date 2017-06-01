@@ -1,0 +1,35 @@
+<md-card class="mainCard">
+  <md-toolbar>
+    <div class="flex flex-row flex-space-between">
+      <span>Teachers</span>
+       <a routerLink="/dashboard/teachers/add" ><button md-mini-fab ><md-icon>add</md-icon></button></a>
+    </div>
+  </md-toolbar>
+
+  <div class="row">
+   <div class="col"></div>
+   <div class="col-md-10 teacherList">
+      <div *ngIf="teachers.length > 0">
+        <div *ngFor="let teacher of teachers; let i=index">
+          <article class="flex flex-row flex-space-between flex-center-items padding">
+            <div>
+              <img src="../../../../assets/teacher-img.png" class="list-img"/>
+            </div>
+            <div class="flex flex-row flex-space-between flex-center-items">
+                <div>
+                  <h5><strong>{{teacher.fname + ' ' + teacher.lname}}</strong></h5>
+                </div>
+                <div class="flex-center-items">
+                  <button md-icon-button ><md-icon>edit</md-icon></button>
+                  <button md-icon-button (click)= "onHandleDelTeacher(teacher.id)" ><md-icon>delete</md-icon></button>
+                </div>
+            </div>
+            
+          </article>
+        </div>
+      </div>
+   </div>
+   <div class="col"></div>
+  </div>
+</md-card>
+

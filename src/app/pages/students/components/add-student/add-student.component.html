@@ -1,0 +1,214 @@
+<md-card class="mainCard">
+  <md-toolbar>
+    <span>Add Student</span>
+  </md-toolbar>
+
+  <div class="row">
+   <div class="col"></div>
+   <div class="col-md-10">
+      <div class="alert alert-success margin" role="alert" *ngIf="success">
+        <strong>Success!</strong> Added the class.
+      </div>
+      <div class="alert alert-danger margin" role="alert" *ngIf="error && !success">
+        <strong>Oops!</strong> {{ error }}
+      </div>
+
+      <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+        <!--<div 
+          class="form-group flex flex-column padding"
+          [ngClass]="{'has-danger': !myForm.controls['status'].valid && myForm.controls['status'].dirty}"
+        >
+          <md-input-container>
+            <md-slide-toggle
+                class="example-margin"
+                [color]="accent"
+                [checked]="checked"
+                [disabled]="disabled">
+                Activate Student
+            </md-slide-toggle>
+          </md-input-container>
+        </div>-->
+
+
+        <div 
+          class="form-group flex flex-column padding"
+          [ngClass]="{'has-danger': !myForm.controls['fname'].valid && myForm.controls['fname'].dirty}"
+        >
+          <md-input-container>
+            <input 
+              mdInput
+              type="text" 
+              class="form-control"
+              [ngClass]="{'form-control-danger': !myForm.controls['fname'].valid}" 
+              placeholder="Enter First Name" 
+              required 
+              id="fname" 
+              formControlName="fname" 
+              fullWidth={true}
+             >
+          </md-input-container>
+        </div>
+
+         <div 
+          class="form-group flex flex-column padding"
+          [ngClass]="{'has-danger': !myForm.controls['lname'].valid && myForm.controls['lname'].dirty}"
+        >
+          <md-input-container>
+            <input 
+              mdInput
+              type="text" 
+              class="form-control"
+              [ngClass]="{'form-control-danger': !myForm.controls['lname'].valid}" 
+              placeholder="Enter Last Name" 
+              required 
+              id="lname" 
+              formControlName="lname" 
+              fullWidth={true}
+             >
+          </md-input-container>
+        </div>
+
+
+        <div 
+          class="form-group flex flex-column padding"
+          [ngClass]="{'has-danger': !myForm.controls['username'].valid && myForm.controls['username'].dirty}"
+        >
+          <md-input-container>
+            <input 
+              mdInput
+              type="text" 
+              class="form-control"
+              [ngClass]="{'form-control-danger': !myForm.controls['username'].valid}" 
+              placeholder="Enter Username" 
+              required 
+              id="username" 
+              formControlName="username" 
+              fullWidth={true}
+             >
+          </md-input-container>
+        </div>
+
+        <div 
+          class="form-group flex flex-column padding"
+          [ngClass]="{'has-danger': !myForm.controls['password'].valid && myForm.controls['password'].dirty}"
+        >
+          <md-input-container>
+            <input 
+              mdInput
+              type="password" 
+              class="form-control"
+              [ngClass]="{'form-control-danger': !myForm.controls['password'].valid}" 
+              placeholder="Enter password" 
+              required 
+              id="password" 
+              formControlName="password" 
+              fullWidth={true}
+             >
+          </md-input-container>
+        </div>
+
+         <div 
+          class="form-group flex flex-column padding"
+          [ngClass]="{'has-danger': !myForm.controls['email'].valid && myForm.controls['email'].dirty}"
+        >
+          <md-input-container>
+            <input 
+              mdInput
+              type="text" 
+              class="form-control"
+              [ngClass]="{'form-control-danger': !myForm.controls['password'].valid}" 
+              placeholder="Enter Email Address" 
+              required 
+              id="email" 
+              formControlName="email" 
+              fullWidth={true}
+             >
+          </md-input-container>
+        </div>
+
+        <div 
+          class="form-group flex flex-column padding"
+          [ngClass]="{'has-danger': !myForm.controls['teacher_id'].valid && myForm.controls['teacher_id'].dirty}"
+        >
+          <md-input-container>
+            <input 
+              mdInput
+              type="text" 
+              class="form-control"
+              [ngClass]="{'form-control-danger': !myForm.controls['teacher_id'].valid}" 
+              placeholder="Enter teacher_id" 
+              required 
+              id="teacher_id" 
+              formControlName="teacher_id" 
+              fullWidth={true}
+             >
+          </md-input-container>
+        </div>
+
+        <div 
+          class="form-group flex flex-column padding"
+          [ngClass]="{'has-danger': !myForm.controls['parent_id'].valid && myForm.controls['parent_id'].dirty}"
+        >
+          <md-input-container>
+            <input 
+              mdInput
+              type="text" 
+              class="form-control"
+              [ngClass]="{'form-control-danger': !myForm.controls['parent_id'].valid}" 
+              placeholder="Enter parent_id" 
+              required 
+              id="parent_id" 
+              formControlName="parent_id" 
+              fullWidth={true}
+             >
+          </md-input-container>
+        </div>
+
+        <div 
+          class="form-group flex flex-column padding"
+          [ngClass]="{'has-danger': !myForm.controls['location_id'].valid && myForm.controls['location_id'].dirty}"
+        >
+          <md-input-container>
+            <input 
+              mdInput
+              type="text" 
+              class="form-control"
+              [ngClass]="{'form-control-danger': !myForm.controls['location_id'].valid}" 
+              placeholder="Enter location_id" 
+              required 
+              id="location_id" 
+              formControlName="location_id" 
+              fullWidth={true}
+             >
+          </md-input-container>
+        </div>
+
+        <!--<div 
+          class="form-group flex flex-column padding"
+          [ngClass]="{'has-danger': !myForm.controls['dob'].valid && myForm.controls['dob'].dirty}"
+        >
+          <md-input-container>
+            <input 
+                mdInput 
+                [mdDatepicker]="picker" 
+                placeholder="Enter DOB"
+                class="form-control"
+                [ngClass]="{'form-control-danger': !myForm.controls['dob'].valid}" 
+                required 
+                id="dob" 
+                formControlName="dob" 
+                fullWidth={true}
+                >
+            <button mdSuffix [mdDatepickerToggle]="picker"></button>
+          </md-input-container>
+          <md-datepicker #picker></md-datepicker>
+        </div>-->
+
+
+
+        <button class="float-right" md-raised-button color='accent' type="submit"  [disabled]="!myForm.valid">Add Student</button>
+      </form>
+   </div>
+   <div class="col"></div>
+  </div>
+</md-card>

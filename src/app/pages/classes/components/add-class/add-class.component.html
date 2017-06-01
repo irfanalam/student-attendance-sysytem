@@ -1,0 +1,60 @@
+<md-card class="mainCard">
+  <md-toolbar>
+    <span>Add Class</span>
+  </md-toolbar>
+
+  <div class="row">
+   <div class="col"></div>
+   <div class="col-md-10">
+      <div class="alert alert-success margin" role="alert" *ngIf="success">
+        <strong>Success!</strong> Added the class.
+      </div>
+      <div class="alert alert-danger margin" role="alert" *ngIf="error && !success">
+        <strong>Oops!</strong> {{ error }}
+      </div>
+
+      <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+        <div 
+          class="form-group flex flex-column padding"
+          [ngClass]="{'has-danger': !myForm.controls['class_assign'].valid && myForm.controls['class_assign'].dirty}"
+        >
+          <md-input-container>
+            <input 
+              mdInput
+              type="text" 
+              class="form-control"
+              [ngClass]="{'form-control-danger': !myForm.controls['class_assign'].valid}" 
+              placeholder="Enter Class Name" 
+              required 
+              id="class_assign" 
+              formControlName="class_assign" 
+              fullWidth={true}
+             >
+          </md-input-container>
+        </div>
+
+         <div 
+          class="form-group flex flex-column padding"
+          [ngClass]="{'has-danger': !myForm.controls['class_no'].valid && myForm.controls['class_no'].dirty}"
+        >
+          <md-input-container>
+            <input 
+              mdInput
+              type="text" 
+              class="form-control"
+              [ngClass]="{'form-control-danger': !myForm.controls['class_no'].valid}" 
+              placeholder="Enter Class Location" 
+              required 
+              id="class_no" 
+              formControlName="class_no" 
+              fullWidth={true}
+             >
+          </md-input-container>
+        </div>
+
+        <button class="float-right" md-raised-button color='accent' type="submit"  [disabled]="!myForm.valid">Add Class</button>
+      </form>
+   </div>
+   <div class="col"></div>
+  </div>
+</md-card>

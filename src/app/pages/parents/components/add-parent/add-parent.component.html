@@ -1,0 +1,158 @@
+<md-card class="mainCard">
+  <md-toolbar>
+    <span>Add Parent</span>
+  </md-toolbar>
+
+  <div class="row">
+   <div class="col"></div>
+   <div class="col-md-10">
+        <div class="flex flex-column ">
+          <div class="alert alert-success margin" role="alert" *ngIf="success">
+            <strong>Success!</strong> Added the parent.
+          </div>
+          <div class="alert alert-danger margin" role="alert" *ngIf="error && !success">
+            <strong>Oops!</strong> {{ error }}
+          </div>
+
+
+          <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+              <div 
+                class="form-group flex flex-column padding"
+                [ngClass]="{'has-danger': !myForm.controls['fname'].valid && myForm.controls['fname'].dirty}"
+               >
+                <md-input-container>
+                  <input 
+                    mdInput
+                    type="text" 
+                    class="form-control"
+                    [ngClass]="{'form-control-danger': !myForm.controls['fname'].valid}" 
+                    placeholder="Enter Parent's First Name" 
+                    required 
+                    id="fname" 
+                    formControlName="fname" 
+                    fullWidth={true}
+                  >
+                </md-input-container>
+              </div>
+
+              <div 
+                class="form-group flex flex-column padding"
+                [ngClass]="{'has-danger': !myForm.controls['lname'].valid && myForm.controls['lname'].dirty}"
+               >
+                <md-input-container>
+                  <input 
+                    mdInput
+                    type="text" 
+                    class="form-control"
+                    [ngClass]="{'form-control-danger': !myForm.controls['lname'].valid}" 
+                    placeholder="Enter Parent's Last Name" 
+                    required 
+                    id="lname" 
+                    formControlName="lname" 
+                    fullWidth={true}
+                  >
+                </md-input-container>
+              </div>
+
+              <div 
+                class="form-group flex flex-column padding"
+                [ngClass]="{'has-danger': !myForm.controls['username'].valid && myForm.controls['username'].dirty}"
+               >
+                <md-input-container>
+                  <input 
+                    mdInput
+                    type="text" 
+                    class="form-control"
+                    [ngClass]="{'form-control-danger': !myForm.controls['username'].valid}" 
+                    placeholder="Enter Parent's User Name" 
+                    required 
+                    id="username" 
+                    formControlName="username" 
+                    fullWidth={true}
+                  >
+                </md-input-container>
+              </div>
+
+              <div 
+                class="form-group flex flex-column padding"
+                [ngClass]="{'has-danger': !myForm.controls['password'].valid && myForm.controls['password'].dirty}"
+               >
+                <md-input-container>
+                  <input 
+                    mdInput
+                    type="password" 
+                    class="form-control"
+                    [ngClass]="{'form-control-danger': !myForm.controls['password'].valid}" 
+                    placeholder="Enter Parent's password" 
+                    required 
+                    id="password" 
+                    formControlName="password" 
+                    fullWidth={true}
+                  >
+                </md-input-container>
+              </div>
+
+               <div 
+                class="form-group flex flex-column padding"
+                [ngClass]="{'has-danger': !myForm.controls['contact_no'].valid && myForm.controls['contact_no'].dirty}"
+                >
+                <md-input-container>
+                  <input 
+                    mdInput
+                    type="text" 
+                    class="form-control"
+                    [ngClass]="{'form-control-danger': !myForm.controls['contact_no'].valid}" 
+                    placeholder="Enter Parent's contact no" 
+                    required 
+                    id="contact_no" 
+                    formControlName="contact_no" 
+                    fullWidth={true}
+                  >
+                </md-input-container>
+              </div>
+
+              <div 
+                class="form-group flex flex-column padding"
+                [ngClass]="{'has-danger': !myForm.controls['email'].valid && myForm.controls['email'].dirty}"
+               >
+                <md-input-container>
+                  <input 
+                    mdInput
+                    type="text" 
+                    class="form-control"
+                    [ngClass]="{'form-control-danger': !myForm.controls['email'].valid}" 
+                    placeholder="Enter Parent's email" 
+                    required 
+                    id="email" 
+                    formControlName="email" 
+                    fullWidth={true}
+                  >
+                </md-input-container>
+              </div>
+
+              <div 
+                class="form-group flex flex-column padding"
+                [ngClass]="{'has-danger': !myForm.controls['location_id'].valid && myForm.controls['location_id'].dirty}"
+               >
+                <md-input-container>
+                  <input 
+                    mdInput
+                    type="text" 
+                    class="form-control"
+                    [ngClass]="{'form-control-danger': !myForm.controls['location_id'].valid}" 
+                    placeholder="Enter Parent's Location id (temp)" 
+                    required 
+                    id="location_id" 
+                    formControlName="location_id" 
+                    fullWidth={true}
+                  >
+                </md-input-container>
+              </div>              
+
+              <button class="float-right" md-raised-button color='accent' type="submit"  [disabled]="!myForm.valid">Add Parent</button>
+            </form>
+        </div>
+        </div>
+   <div class="col"></div>
+  </div>
+</md-card>

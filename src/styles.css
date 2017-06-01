@@ -1,0 +1,106 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+.no-gutter > [class*='col-'] {
+    padding-right:0;
+    padding-left:0;
+}
+.padding {
+  padding: 15px;
+}
+
+.no-padding {
+  padding: 0px !important;
+}
+
+.no-vertical-padding {
+  padding-top: 0px;
+  padding-bottom: 0px; 
+}
+
+.no-horizontal-padding {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.padding-top {
+  padding-top: 15px;
+}
+
+.padding-bottom {
+  padding-bottom: 15px;
+}
+
+.padding-vertical {
+  padding-top: 15px;
+  padding-bottom: 15px; 
+}
+
+.padding-horizontal {
+  padding-left:15px ;
+  padding-right: 15px; 
+}
+
+.margin {
+  margin: 20px;
+}
+
+.no-margin {
+  margin: 0px !important;
+}
+
+.no-top-margin {
+  margin-top: 0px;
+}
+
+.margin-horizontal {
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+.margin-vertical {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.margin-top {
+  margin-top: 15px;
+}
+
+.margin-bottom {
+  margin-bottom: 15px;
+}
+
+.margin-right {
+  margin-right: 15px;
+}
+
+.margin-left {
+  margin-left: 15px;
+}
+
+
+ /*Flexbox Layout Helpers*/
+.flex{
+  flex: 1;
+}
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+.flex-inline {
+  display: inline-flex;
+}
+.flex-center-items {
+  align-items: center;
+}
+.flex-baseline-items {
+  align-items: baseline;
+}
+.flex-space-between {
+  justify-content: space-between;
+}

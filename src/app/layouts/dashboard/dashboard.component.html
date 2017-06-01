@@ -1,0 +1,20 @@
+<md-toolbar color="primary">
+  <div class="flex-row flex-center-items lex-baseline-items">
+    <button md-icon-button (click)="sidenav.toggle()"><md-icon>menu</md-icon></button>
+    <span>SAS</span>
+  </div>
+</md-toolbar>
+
+<md-sidenav-container class="sidenav-container">
+  <div class="bg-color"></div>
+  <md-sidenav mode="side" opened="true" #sidenav  class="sidenav">
+       <app-dashboard-sidebar></app-dashboard-sidebar>
+  </md-sidenav>
+  <div class="row sidenav-content">
+    <div class="col"></div>
+    <div class="col-md-8">
+      <router-outlet></router-outlet>
+    </div>
+    <div class="col"></div>
+  </div>
+</md-sidenav-container>

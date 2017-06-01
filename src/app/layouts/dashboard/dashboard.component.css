@@ -1,0 +1,32 @@
+/*.classList{
+   height: 600px !important;
+   overflow-y: scroll;
+}*/
+
+
+.sidenav-container {
+  width: 100%;
+  min-height: 780px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.bg-color{
+  background-color:#673AB7;
+  height: 100px; 
+  width: 100%;
+}
+
+
+.sidenav-content {
+  display: flex;
+  width:100%;
+  height: 100%;
+  margin-top:-65px;
+  z-index: 9999px;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidenav {
+    width: 20%;
+}

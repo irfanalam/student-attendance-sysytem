@@ -1,0 +1,36 @@
+<md-card class="mainCard">
+  <md-toolbar>
+   <div class="flex flex-row flex-space-between">
+      <span>Parents</span>
+       <a routerLink="/dashboard/parents/add" ><button md-mini-fab ><md-icon>add</md-icon></button></a>
+    </div>
+  </md-toolbar>
+
+  <div class="row">
+   <div class="col"></div>
+   <div class="col-md-10 parentList">
+      <div *ngIf="parents.length > 0">
+        <div *ngFor="let parent of parents; let i=index">
+          <article class="flex flex-row flex-space-between flex-center-items padding">
+            <div>
+              <img src="../../../../assets/teacher-img.png" class="list-img"/>
+            </div>
+            <div class="flex flex-row flex-space-between flex-center-items">
+              <div class="flex flex-cloumn">
+              <h5><strong>{{parent.fname + ' ' + parent.lname}}</strong></h5>
+              <p>Email : {{parent.email}}</p>
+            </div>
+            <div class="flex-center-items">
+              <button md-icon-button ><md-icon>edit</md-icon></button>
+              <button md-icon-button  (click)="onHandleDelParent(parent.id)"><md-icon>delete</md-icon></button>
+            </div>
+            </div>
+            
+          </article>
+        </div>
+      </div>
+   </div>
+   <div class="col"></div>
+  </div>
+</md-card>
+
