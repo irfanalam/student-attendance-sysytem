@@ -3,6 +3,7 @@ const validator = require('validator');
 
 const models = require('../models');
 const Teachers = models.teachers;
+const Classes = models.classes;
 
 module.exports = {
 
@@ -109,6 +110,34 @@ module.exports = {
               }).end();
       })
       .catch((error) => {
+        console.log(err);
+        return res.status(500).json({ success: false, message: "Internal Server Error" }).end();
+      })
+    },
+
+    getClassesByTeacherId: function (req, res, next) {
+      var id = req.params.id;
+      if (!id) {
+        return res.status(400).json({ success: false, message: "Parameter is missing" }).end();
+      }
+
+      Teachers.findOne({
+        where: { id : id }
+      })
+      .then((teacher) => {
+        if(teacher === null) {
+          return res.status(400).json({ success: false, message: "No teacher Found" }).end();
+        }
+        // return res.status(200).json({ success: true, teacher }).end();
+        return Classes.findAll({ where: { id : teacher.class_id } })
+      })
+      .then((classes) => {
+        if(classes.length === 0) {
+          return res.status(200).json({ success: false, message: "No Classes associated with this teacher" }).end();
+        }
+        return res.status(200).json({ success: true, classes }).end();
+      })
+      .catch(function(err) {
         console.log(err);
         return res.status(500).json({ success: false, message: "Internal Server Error" }).end();
       })

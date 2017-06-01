@@ -7,6 +7,7 @@ router
     .post('/', tchrFunc.create)
     .get('/', tchrFunc.getAll)
     .get('/:id', tchrFunc.getById)
+    .get('/:id/class', tchrFunc.getClassesByTeacherId)
     .put('/:id', tchrFunc.updateTeacher)
     .delete('/:id', tchrFunc.deleteTeacher);
 

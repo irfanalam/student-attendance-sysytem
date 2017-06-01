@@ -113,6 +113,27 @@ module.exports = {
 		})
   },
 
+  getStudentsByClassId: function (req, res, next) {
+    var id = req.params.id;
+      if (!id) {
+        return res.status(400).json({ success: false, message: "Parameter is missing" }).end();
+      }
+
+    Students.findAll({
+			where: { class_id : id }
+		})
+		.then((students) => {
+			if(students.length === 0) {
+				return res.status(400).json({ success: false, message: "No student(s) Found For This Class" }).end();
+			}
+			return res.status(200).json({ success: true, students }).end();
+		})
+		.catch(function(err) {
+			console.log(err);
+			return res.status(500).json({ success: false, message: "Internal Server Error" }).end();
+		})
+  },
+
 };
 
 function validateStudentBody(payload) {
