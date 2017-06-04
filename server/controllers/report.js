@@ -6,7 +6,7 @@ const Report = models.report;
 module.exports = {
 
   create: function (req, res, next) {
-    const validateResult = validateClassBody(req.body);
+    const validateResult = validateReportBody(req.body);
     if (!validateResult.success) {
       return res.status(400).json({
         success: false,
@@ -36,7 +36,7 @@ module.exports = {
   getAll: function (req, res, next) {
     Report.findAll({})
     .then((report) => {
-        if(classes === null) {
+        if(report === null) {
             return res.status(400).json({ success: false, message: "No Report(s) Exist" }).end();
         }
         return res.status(200).json({ success: true, report }).end();
@@ -52,8 +52,8 @@ module.exports = {
     Report.findOne({
         where: { id : id }
     })
-    .then((classes) => {
-        if(classes === null) {
+    .then((report) => {
+        if(report === null) {
             return res.status(400).json({ success: false, message: "No Report Found" }).end();
         }
         return res.status(200).json({ success: true, report }).end();
@@ -117,7 +117,7 @@ function validatReportBody(payload) {
   let isFormValid = true;
   let message = '';
 
-  if (!payload || typeof payload.report_subject !== 'number' || payload.report_subject.trim().length === 0) {
+  if (!payload || typeof payload.report_subject !== 'string' || payload.report_subject.trim().length === 0) {
     isFormValid = false;
     errors.class_no = 'Please provide subject';
   }
