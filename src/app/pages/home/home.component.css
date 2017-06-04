@@ -1,0 +1,31 @@
+.dashboard-item{
+    height:80%;
+    width: 90%;
+}
+
+.item-img{
+    height: 40px;
+    width:40px;
+    margin-top: -10px;
+}
+
+.text-class{
+    font-size: 22px;
+    color: green;
+    font-family: cursive;
+}
+.text-parent{
+    font-size: 22px;
+    color:  orange;
+    font-family: cursive;
+}
+.text-student{
+    font-size: 22px;
+    color:  lightskyblue;
+    font-family: cursive;
+}
+.text-teacher{
+    font-size: 22px;
+    color: yellow;
+    font-family: cursive;
+}

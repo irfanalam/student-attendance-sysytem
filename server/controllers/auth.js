@@ -133,8 +133,47 @@ module.exports = {
         // console.log(error);
         return res.status(500).json({ success: false, message: 'Internal Server Error' }).end();
       });
-  }
+  },
 
+
+  getProfile: (req, res) => {
+    return res.status(200).json({
+       success: true,
+      teacher: {
+      id:1,
+      name:"teacher 1"
+    }
+  });
+     
+    //  console.log(req.query.query);
+    // if (req.query.query ) {
+    //       var authorization = req.query.query,
+    //           decoded;
+    //       console.log(authorization, req.app.get('superSecret'));
+    //       jwt.verify(authorization, req.app.get('superSecret'), function(err, decoded) {     
+    //           if (err) {
+    //             return res.json({ success: false, message: 'Failed to authenticate token.' });    
+    //           } else {
+    //             // if everything is good, save to request for use in other routes
+    //             req.decoded = decoded;    
+    //             next();
+    //             var userId = decoded;
+    //             //Fetch the user by id 
+    //             Teachers.findOne({ where: { id: userId } })
+    //           .then((teacher) => {
+    //               return res.sendStatus(200).json({teacher: teacher});
+    //           });
+    //           }
+    //         });
+    //       // try {
+    //       //     decoded = jwt.verify(authorization, req.app.get('superSecret'));
+    //       // } catch (e) {
+    //       //     return res.status(401).send('unauthorized');
+    //       // }
+          
+    //   }
+    //   return res.sendStatus(500);
+  }
 };
 
 function validateLoginFormBody(payload) {

@@ -7,6 +7,7 @@ router
   .post('/admin',   authFunc.loginAdminUser)
   .post('/parent',   authFunc.loginParentUser)
   .post('/student',   authFunc.loginStudentUser)
-  .post('/teacher',   authFunc.loginTeacherUser);
+  .post('/teacher',   authFunc.loginTeacherUser)
+  .get('/getProfile', authFunc.getProfile);
 
 module.exports = router;

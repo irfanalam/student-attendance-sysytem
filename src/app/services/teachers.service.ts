@@ -25,5 +25,12 @@ export class TeachersService {
                .delete(url)
                .map(res => res.json());
   }
+
+  getTeacherById(_id) {
+    let url = this.baseUrl + 'teacher/' +_id;
+    return this._http
+               .get(url)
+               .map(res => res.json());
+  }
   
 }

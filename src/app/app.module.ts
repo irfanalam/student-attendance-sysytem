@@ -46,6 +46,7 @@ import { AddClassComponent } from './pages/classes/components/add-class/add-clas
 import { AddStudentComponent } from './pages/students/components/add-student/add-student.component';
 import { AddParentComponent } from './pages/parents/components/add-parent/add-parent.component';
 import { AddTeacherComponent } from './pages/teachers/components/add-teacher/add-teacher.component';
+import { LogoutComponent } from './pages/logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -64,6 +65,7 @@ import { AddTeacherComponent } from './pages/teachers/components/add-teacher/add
     AddStudentComponent,
     AddParentComponent,
     AddTeacherComponent,
+    LogoutComponent,
     
   ],
   imports: [
